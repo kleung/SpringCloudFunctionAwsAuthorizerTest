@@ -19,25 +19,17 @@ import com.test.TestAwsLambdaAuthorizer.cloudFunction.AuthorizerFunction;
 import com.test.TestAwsLambdaAuthorizer.cloudFunction.TestFunction;
 import com.test.TestAwsLambdaAuthorizer.model.AuthPolicy;
 
-/*@Import({
-	AuthorizerFunction.class
-})
-
-@SpringBootApplication*/
 @SpringBootConfiguration
 public class TestAwsLambdaAuthorizerApplication implements ApplicationContextInitializer<GenericApplicationContext> {
 	
 	public static void main(String[] args) {
 		FunctionalSpringApplication.run(TestAwsLambdaAuthorizerApplication.class, args);
-		//SpringApplication.run(TestAwsLambdaAuthorizerApplication.class, args);
 	}
 
-	//@Bean
 	public AuthorizerFunction authorizer() {
 		return new AuthorizerFunction();
 	}
 	
-	//@Bean
 	public TestFunction testFunction() {
 		return new TestFunction();
 	}

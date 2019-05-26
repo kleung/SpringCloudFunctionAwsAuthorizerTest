@@ -9,7 +9,7 @@ package:
 functions:
   awsAuthorizer:
     name: aws-lambda-authorizer
-    handler: com.test.TestAwsLambdaAuthorizer.AwsLambdaHandler
+    handler: com.test.TestAwsLambdaAuthorizer.eventHandler.AuthorizerEventHandler
     events:
       - http:
           path: authorize
