@@ -1,0 +1,17 @@
+service: spring-cloud-function-authorizer
+provider:
+  name: aws
+  runtime: java8
+  region: eu-west-1
+  timeout: 20
+package:
+  artifact: target/TestAwsLambdaAuthorizer-0.0.1-SNAPSHOT-aws.jar
+functions:
+  awsAuthorizer:
+    name: aws-lambda-authorizer
+    handler: com.test.TestAwsLambdaAuthorizer.eventHandler.AuthorizerEventHandler
+    events:
+      - http:
+          path: authorize
+          method: get
+          cors: true
